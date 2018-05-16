@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>javAnime Example</title>
+		<script src="javAnime.min.js"></script>
+	</head>
+	<body>
+		<div id="animateThis"></div>
+		<style>
+			@keyframes walking{
+				100%{
+					width:52px;
+				  height:85px;
+					background-image: url("example-walkingSpriteSheet.png");
+					background-position:-416px;
+				}
+			}
+			@keyframes standing{
+				0%{
+					width:52px;
+			  	height:85px;
+					background-image: url("example-walkingSpriteSheet.png");
+					background-position:0 0;
+				}
+				100%{
+					width:52px;
+			  	height:85px;
+					background-image: url("example-walkingSpriteSheet.png");
+					background-position:0 0;
+				}
+			}
+			@keyframes action{
+				99%{
+					width:77px;
+				  height:89px;
+					background-image: url("example-actionSpriteSheet.png");
+					background-position:-616px;
+				}
+				100%{
+					width:77px;
+				  height:89px;
+					background-image: url("example-actionSpriteSheet.png");
+					background-position:-539px 0;
+				}
+			}
+			@keyframes dissipate{
+				0%{
+					width:77px;
+				  height:89px;
+					background-image: url("example-actionSpriteSheet.png");
+					background-position:-539px 0;
+					transition:opacity 1s ease-in;
+				}
+				100%{
+					width:77px;
+				  height:89px;
+					background-image: url("example-actionSpriteSheet.png");
+					background-position:-539px 0;
+					opacity:0;
+				}
+			}
+			@keyframes nonIntrusive{
+				0%{
+					display:none;
+				}
+				100%{
+					display:none;
+				}
+			}
+			[anime="walking"]{ animation:walking 1s steps(8) infinite; transition:left 1s linear; }
+			[anime="standing"]{ animation:standing 0.1s forwards; }
+			[anime="action"]{ animation:action 1s steps(8) forwards; }
+			[anime="dissipate"]{ animation:dissipate 2s forwards; }
+			[anime="nonIntrusive"]{ animation:nonIntrusive 0.1s forwards; }
+			[action="moveToTitle"]{ left:200px; }
+		</style>
+		<script>
+			var animate= new javAnime();
+			animate.debugging= true;
+			animate.scenes=[
+				{ anime:"walking", selector:"#animateThis", action:"moveToTitle", infiniteAnimation:true, preLogic:justDoSomething },
+				{ anime:"standing", selector:"#animateThis" },
+				{ anime:"action", selector:"#animateThis" },
+				{ anime:"dissipate", selector:"#animateThis" },
+				{ anime:"nonIntrusive", selector:"#animateThis", infiniteAnimation:true }
+			];
+			animate.start();
+			
+			
+			function justDoSomething(callBack){
+				callBack();
+			}
+		</script>
+	</body>
+</html>
