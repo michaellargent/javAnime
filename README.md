@@ -1,5 +1,3 @@
-
-
 # javAnime
 
 > a javascript/css processor for handling sprite sheet animation and logic
