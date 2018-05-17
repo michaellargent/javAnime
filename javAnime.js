@@ -126,11 +126,6 @@ class javAnime{
 					i
 				);
 				return;
-				//OLD METHOD: invoke the preLogic object and pass this animeObject
-				//i.preLogic[ i.scenes[i.sceneInstance].preLogic ]( i,
-					//function(it){ i.logicEnd(it, "preLogic"); }
-				//);
-				//return;
 			}),
 			processAnime: (function(i){
 				if (i.debugging){
@@ -280,9 +275,6 @@ class javAnime{
 					function(){ i.logicEnd(i,"postLogic"); },
 					i
 				);
-				//i.postLogic[ i.scenes[i.sceneInstance].postLogic ]( i,
-					//function(it){ i.logicEnd(it,"postLogic"); }
-				//);
 				return;
 			}),
 			processSceneCompletion: (function(i){
