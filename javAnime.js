@@ -1,5 +1,6 @@
 /*
 javAnime v1.0.0
+-updateing-
 
 @MichaelLargent [twitter | github]
 */
@@ -7,12 +8,12 @@ class javAnime{
 	constructor(env, cb){
 		return Object.assign({
 			//passable variables
-			scenes:[],					//json format, when submitting "anime" or "action", a "selector" or "selectors" are required
-			debugging:false,		//turn on debugging console
-			preLogic:{},				//passed functions to perform before anime or action
-			postLogic:{},				//passed functions to perform after anime or action
-			hotPotato:{},				//container for data to passed around the scenes
-			sceneInstance:0,		//start on which scene
+			scenes:[],							//json format, when submitting "anime" or "action", a "selector" or "selectors" are required
+			debugging:false,				//turn on debugging console
+			preLogic:{},						//passed functions to perform before anime or action
+			postLogic:{},						//passed functions to perform after anime or action
+			hotPotato:{},						//container for data to passed around the scenes
+			sceneInstance:0,				//start on which scene
 			//states
 			animeProcessing:false,			
 			actionProcessing:false,
