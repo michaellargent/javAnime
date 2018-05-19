@@ -1,6 +1,5 @@
 /*
 javAnime v1.0.0
--updateing-
 
 @MichaelLargent [twitter | github]
 */
